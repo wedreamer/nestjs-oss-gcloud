@@ -44,7 +44,7 @@ module.ts
 ```javascript
 import { Storage } from '@google-cloud/storage';
 import { Module } from '@nestjs/common';
-import { GcloudOssModule } from 'lib/gcloud-oss';
+import { GcloudOssModule } from '@shubuzuo/nestjs-oss-gcloud';
 import * as path from 'path';
 import { AppController } from './app.controller';
 
@@ -68,7 +68,20 @@ const config = {
 
 @Module({
   imports: [
-    GcloudOssModule.forRoot(config),
+    GcloudOssModule.forRoot({
+      //默认 存储桶名
+      defaultBucketname: 'your bacuetName',
+      //存储桶 基本路径
+      storageBaseUri: 'image',// image/test, image/2010-10-10/test, 首尾不需 带 /
+      //存储规则
+      predefinedAcl: 'private', // Default is private
+      //key 所放路径名
+      keyFilename: keyFilename,
+      //项目 id
+      projectId: '***-***-***',
+      //文件名前缀
+      prefix: 'test-'
+    }),
   ],
   controllers: [AppController],
   providers: [],
@@ -80,7 +93,7 @@ controller.ts
 import { UploadedFileMetadata } from '@aginix/nestjs-gcloud-storage';
 import { Controller, Get, Post, UploadedFile, UseInterceptors, Query, Res } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { GcloudOssService } from 'lib/gcloud-oss';
+import { GcloudOssService } from '@shubuzuo/nestjs-oss-gcloud';
 import { Response } from 'express';
 
 
