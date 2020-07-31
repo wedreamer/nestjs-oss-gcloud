@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": false,
+    "paths": {
+      "lib/gcloud-oss": [
+        "libs/gcloud-oss/src"
+      ],
+      "lib/gcloud-oss/*": [
+        "libs/gcloud-oss/src/*"
+      ]
+    }
+  }
+}

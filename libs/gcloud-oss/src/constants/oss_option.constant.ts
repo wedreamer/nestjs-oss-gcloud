@@ -1,0 +1,1 @@
+export const OSS_OPTIONS = Symbol('OSS_OPTIONS');

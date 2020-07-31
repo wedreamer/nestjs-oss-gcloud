@@ -1,0 +1,18 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "projects": {
+    "gcloud-oss": {
+      "type": "library",
+      "root": "libs/gcloud-oss",
+      "entryFile": "index",
+      "sourceRoot": "libs/gcloud-oss/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/gcloud-oss/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": false
+  }
+}
