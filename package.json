@@ -1,14 +1,24 @@
 {
   "name": "@shubuzuo/nestjs-oss-gcloud",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "对需要及可能用到的 gcloud OSS 模块进行封装, 降低对项目的侵入",
   "author": "shubuzuo <1409458062@qq.com>",
   "private": false,
   "license": "MIT",
   "main": "./dist/index.js",
+  "keywords": [
+    "nestjs",
+    "gcloud",
+    "oss",
+    "gcloud-storage"
+  ],
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wedreamer/nestjs-oss-gcloud"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
